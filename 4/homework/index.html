@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calc</title>
+</head>
+<body>
+<script>
+    var x = parseInt(prompt('Enter first number', '10'),10);
+    var operation = prompt('Choose operation *, /, +, -,', '+');
+    var y = parseInt(prompt('Enter second number', '5'),10);
+
+    switch (operation) {
+        case '+':
+            result = plus(x, y);
+            break;
+        case '-':
+            result = minus(x, y);
+            break;
+        case '*':
+            result = multiply(x, y);
+            break;
+        case '/':
+            result = divide(x, y);
+            break;
+        default:
+            result = "Error, incorrect input";
+    }
+    alert(result);
+
+    function plus(a, b) {
+        return (a + b)
+    }
+
+    function minus(a, b) {
+        return (a - b)
+    }
+
+    function multiply(a, b) {
+        return (a * b)
+    }
+
+    function divide(a, b) {
+        return (a / b)
+    }
+</script>
+</body>
+</html>
