@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM List</title>
+</head>
+<body>
+    <ul id="list">
+        <li>Element 1</li>
+        <li>Element 2</li>
+        <li style="color: green">Element 3</li>
+        <li style="color: green">Element 4</li>
+        <li>Element 5</li>
+        <li style="color: green">Element 6</li>
+        <li style="color: green">Element 7</li>
+        <li style="color: green">Element 8</li>
+        <li>Element 9</li>
+        <li style="color: green">Element 10</li>
+    </ul>
+<script>
+    var newElem, list = document.getElementById("list");
+
+    var elements = document.querySelectorAll("li");
+
+    for (var i = 0; i < elements.length; i++) {
+        newElem = document.createElement("li");
+
+        if (elements[i].style.color == "green") {
+            newElem.style.color = "green";
+            newElem.innerHTML = "<span>"+ elements[i].innerHTML +"</span>";
+        } else {
+            newElem.innerHTML = "<p>"+ elements[i].innerHTML +"</p>";
+        }
+
+        list.replaceChild(newElem, elements[i]);
+    }
+</script>
+</body>
+</html>
