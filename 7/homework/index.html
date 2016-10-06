@@ -1,0 +1,73 @@
+<html>
+<head>
+    <title>Ajax</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+    <div class="post-container">
+        <label for="username">Enter username: <input type="text" name="user" id="username"></label>
+        <label for="isAdmin">is Admin: <input type="checkbox" name="isAdmin" id="isAdmin"></label>
+        <button onclick='addUser()'>Add User</button>
+    </div>
+    <div class="get-container">
+        <input type="button" value="Get Users" id="btn" onclick ='getUsers()'>
+    </div>
+</div>
+<script>
+    function SendRequest(r_method, r_path, r_args, r_handler) {
+        var Request = new XMLHttpRequest();
+
+        Request.onreadystatechange = function() {
+            if (Request.readyState == 4) {
+                r_handler(Request);
+            }
+        };
+
+        if (r_method.toLowerCase() == "get" && r_args.length > 0)
+            r_path += "?" + r_args;
+
+        Request.open(r_method, r_path, true);
+
+        if (r_method.toLowerCase() == "post") {
+            Request.setRequestHeader("Content-Type","application/x-www-form-urlencoded; charset=utf-8");
+            Request.send(r_args);
+        } else {
+            Request.send(null);
+        }
+    }
+
+    function addUser() {
+        var username = document.getElementById("username");
+        var isAdmin = document.getElementById("isAdmin");
+        var params;
+        if (isAdmin.checked) {
+            params = "name=" + username.value + "&role=admin";
+        } else {
+            params = "name=" + username.value;
+        }
+        var Handler = function(Request) {
+            var ul = document.createElement("ul");
+            ul.id = "post-users";
+            var get = document.getElementsByClassName("post-container");
+            get[0].appendChild(ul);
+            ul.innerHTML = ul.innerHTML + Request.responseText;
+        };
+        SendRequest("POST", "server.php", params, Handler);
+    }
+
+    function getUsers() {
+        var Handler = function(Request) {
+            var ul = document.createElement("ul");
+            ul.id = "get-users";
+            var get = document.getElementsByClassName("get-container");
+            get[0].appendChild(ul);
+            ul.innerHTML = Request.responseText;
+        };
+        SendRequest("GET", "server.php", "list=show", Handler);
+    }
+</script>
+
+</body>
+</html>

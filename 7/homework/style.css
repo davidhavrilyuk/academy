@@ -1,0 +1,16 @@
+.wrap {
+    width: 960px;
+    margin: 0 auto;
+}
+.post-container, .get-container {
+    float: left;
+    width: 450px;
+    margin: 15px;
+}
+.post-container label,
+.post-container button,
+.post-container ul{
+    float: left;
+    clear: both;
+    margin: 5px;
+}
