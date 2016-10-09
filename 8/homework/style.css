@@ -1,0 +1,214 @@
+/*global*/
+body, html {
+    margin: 0;
+    font-family: Calibri, sans-serif;
+}
+
+/*general*/
+.wrap {
+    width: 940px;
+    padding: 0 10px;
+    margin: 0 auto;
+}
+
+/*header*/
+.header {
+    float: left;
+    width: 100%;
+}
+.header .logo {
+    background: url("img/logo.jpg") top left no-repeat;
+    width: 241px;
+    height: 37px;
+    float: left;
+    text-indent: -99999px;
+    margin: 20px 0;
+}
+
+/*menu*/
+.menu {
+    list-style: none;
+    float: left;
+    display: block;
+    margin: 0;
+    padding: 0 4px;
+    background: #000;
+}
+.menu li {
+    float: left;
+    display: block;
+}
+.menu li a {
+    float: left;
+    display: block;
+    padding: 15px;
+    text-align: center;
+    font-size: 16px;
+    background: #000;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+
+}
+.menu li a:hover {
+    background: #fff;
+    color: #000;
+}
+
+/*main*/
+.main {
+    float: left;
+}
+.main h2 {
+    color: #000;
+    text-transform: uppercase;
+    border-bottom: 3px solid maroon;
+    margin: 15px 0;
+}
+.main .news {
+    position: relative;
+    float: left;
+    width: 145px;
+    min-height: 310px;
+    margin: 0 10px 10px 0;
+}
+.main .news:last-child {
+    margin: 0 0 10px 0;
+}
+.main .news h3 {
+    font-size: 14px;
+    margin: 5px 0;
+}
+.main .news p {
+    font-size: 14px;
+    margin: 5px 0;
+}
+.main .news .rm {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    text-transform: uppercase;
+    color: #ff0521;
+    font-weight: 700;
+    font-size: 13px;
+    text-decoration: none;
+}
+
+/*sidebar*/
+.sidebar {
+    float: left;
+    width: 200px;
+    margin: 0 10px;
+}
+.sidebar h2 {
+    color: #000;
+    text-transform: uppercase;
+    border-bottom: 3px solid maroon;
+    margin: 15px 0 10px 0;
+}
+.sidebar .news {
+    float: left;
+    width: 200px;
+    margin: 0 10px 10px 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px dotted #000;
+}
+.sidebar .news h3 {
+    margin: 5px 0;
+    font-size: 14px;
+}
+.sidebar .news p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+.sidebar .news .rm {
+    text-transform: uppercase;
+    color: #ff0521;
+    font-weight: 700;
+    font-size: 13px;
+    text-decoration: none;
+}
+.sidebar .news span {
+    font-size: 12px;
+    margin: 0 10px;
+}
+
+/*form*/
+form {
+    float: left;
+    display: block;
+    width: 225px;
+    padding: 15px;
+    margin: 20px 0 10px 10px;
+    background: #dcdcdc;
+}
+form .title {
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 20px;
+}
+form p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+form input[type="text"],
+form input[type="email"] {
+    padding: 5px;
+    background: #fff;
+    width: 225px;
+    border: 1px solid #777;
+    margin: 5px 0;
+    outline: none;
+}
+form input[type="submit"] {
+    background: #ff0521;
+    text-transform: uppercase;
+    padding: 5px 20px;
+    border: 1px solid #777;
+    cursor: pointer;
+    color: #fff;
+    margin: 5px 0;
+    outline: none;
+}
+form .info {
+    color: #ff0521;
+    width: 100%;
+    text-align: center;
+    font-size: 12px;
+    float: left;
+}
+
+/*open button*/
+.open {
+    float: right;
+    background: #ff0521;
+    text-transform: uppercase;
+    padding: 5px 20px;
+    border: 1px solid #777;
+    cursor: pointer;
+    outline: none;
+    color: #fff;
+    margin: 20px 0;
+}
+#popup.none {
+    display: none;
+}
+#popup {
+    position: absolute;
+    left: 50%;
+    top: 100px;
+    width: 340px;
+    padding: 10px 30px;
+    margin: 0 0 0 -200px;
+    background: #f1f1f1;
+    border: 1px solid #dcdcdc;
+    text-transform: uppercase;
+}
+#popup p {
+    margin: 5px 0;
+    border-bottom: 1px dashed #999;
+}
+#popup p span {
+    float: right;
+    font-weight: 700;
+}
