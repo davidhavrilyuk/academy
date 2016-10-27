@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>JSA 1</title>
+</head>
+<body>
+<script>
+    //object
+/*1*/
+    /*var person = {
+        name: "John",
+        check: function(){
+            console.log("Ok!");
+        }
+    };
+
+    person.check();*/
+    //
+    /*var person = {
+        name: "John"
+    };
+    person.check = function(){
+        console.log("Ok!");
+    };
+    person.check();*/
+/*2*/
+    /*var person = {
+        name: "John",
+        check: function(){
+            console.log( this.name + " Ok!");
+        }
+     };
+
+     person.check();*/
+    //
+    /*var obj1 = {param: "param from Obj1"};
+    var obj2 = {param: "param from Obj2"};
+
+    function show(){
+        console.log(this.param);
+    }
+
+    obj1.check1 = show;
+    obj2.check2 = show;
+
+    obj1.check1();
+    obj2.check2();*/
+/*3*/
+    /*function show(){
+        console.log(this);
+    }
+
+    show();*/
+/*4*/
+    /*if ({}) {
+        console.log("true")
+    } else {
+        console.log("false")
+    }*/
+    //
+    /*var obj = {
+        key: "value"
+    };
+    alert(obj);*/
+    //
+    /*var obj = {
+        key: "value",
+        toString: function(){
+            return this.key;
+        }
+     };
+     alert(obj);*/
+    //
+    /*var obj = {
+        key: "value",
+        digit: 17,
+        valueOf: function(){
+            return this.digit;
+        },
+        toString: function(){
+            return this.digit;
+        }
+    };
+    alert(+obj);*/
+    //
+    /*var obj = {
+        key: "value",
+        digit: 17,
+        toString: function(){
+            return this.digit;
+        }
+    };
+    alert(+obj);*/
+</script>
+<script>
+/*1*/
+    //конструктор
+    /*function Person (name) {
+        this.name = name;
+        this.age = 30;
+    }
+
+    var john = new Person("John");
+    console.log(john);*/
+/*2*/
+    //new function() { … }
+    /*var john = new function () {
+        this.name = "John";
+        this.age = 30;
+    };
+    console.log(john);*/
+    //
+    /*var john = {
+        name : "John",
+        age : 30
+    };
+    console.log(john);*/
+/*3*/
+    /*function Person () {
+        this.name = "John";
+        this.age = 30;
+        return {height: 180};
+     }
+
+     var john = new Person();
+     console.log(john);*/
+    //
+   /* function Person () {
+        this.name = "John";
+        this.age = 30;
+        return 180;
+    }
+
+    var john = new Person();
+    console.log(john);*/
+/*4*/
+   /* var john = new Person();
+    //
+    var john = new Person;*/
+/*5*/
+    /*function Person (name) {
+        this.name = name;
+        this.age = 30;
+        this.check = function(){
+            if (this.age > 18) {
+                console.log("Ok!");
+            }
+        }
+    }
+
+    var john = new Person("John");
+    john.check();*/
+/*6*/
+    /*function Person (name) {
+        this.name = name;
+        this.age = 30;
+        var age = 18, message = "Ok!";
+        this.check = function(){
+            if (this.age > age) {
+                console.log(message);
+            }
+        }
+     }
+
+     var john = new Person("John");
+     john.check();
+    console.log(john.age);
+    console.log(john.message);*/
+
+</script>
+<script>
+    //дискрипторы
+/*1*/
+    /*var obj = {};
+    obj.key = "val";
+
+    console.log(obj);*/
+    //
+    /*var obj = {};
+    Object.defineProperty(obj, "key", {value: "val", configurable: true, writable: true, enumerable: true});
+    //
+    Object.defineProperty(obj, "key", {value: "val", configurable: false, writable: false, enumerable: true});
+    obj.key = 15;
+    console.log(obj);*/
+/*2*/
+    /*var obj = {
+        height: 120,
+        width: 150
+    };
+    Object.defineProperty(obj, "square", {
+        get:function(){
+            return this.height + this.width;
+        }
+    });
+    console.log(obj.square);*/
+    //
+    /*var obj = {
+        height: 120,
+        width: 150
+    };
+    Object.defineProperty(obj, "square", {
+        set:function(value){
+            var side = value / 2;
+            this.height = side;
+            this.width = side;
+        }
+    });
+    obj.square = 270;
+    console.log(obj.height);
+    console.log(obj.width);*/
+    //
+/*    var obj = {
+        height: 120,
+        width: 150,
+        get square(){
+            return this.height + this.width;
+        },
+        set square(value){
+            var side = value / 2;
+            this.height = side;
+            this.width = side;
+        }
+    };
+
+    console.log(obj.square);
+    obj.square = 270;
+    console.log(obj.height);
+    console.log(obj.width);*/
+</script>
+</body>
+</html>
