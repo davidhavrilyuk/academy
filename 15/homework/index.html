@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    var calc = {
+        start: function(){
+            this.a = parseInt(prompt('Enter first number', '10'),10);
+            this.b = parseInt(prompt('Enter second number', '5'),10);
+            return prompt('Choose operation *, /, +, -,', '+');
+        },
+
+        plus: function () {
+            return (this.a + this.b)
+        },
+
+        minus: function () {
+            return (this.a - this.b)
+        },
+
+        multiply: function () {
+            return (this.a * this.b)
+        },
+
+        divide:function () {
+            return (this.a / this.b)
+        }
+    };
+
+    switch (calc.start()) {
+        case '+':
+            result = calc.plus();
+            break;
+        case '-':
+            result = calc.minus();
+            break;
+        case '*':
+            result = calc.multiply();
+            break;
+        case '/':
+            result = calc.divide();
+            break;
+        default:
+            result = "Error, incorrect input";
+    }
+    alert(result);
+</script>
+</body>
+</html>
