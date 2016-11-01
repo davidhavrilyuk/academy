@@ -23,7 +23,8 @@
     person.check = function(){
         console.log("Ok!");
     };
-    person.check();*/
+    person.check();
+    console.log(person);*/
 /*2*/
     /*var person = {
         name: "John",
@@ -70,7 +71,7 @@
             return this.key;
         }
      };
-     alert(obj);*/
+    alert(obj);*/
     //
     /*var obj = {
         key: "value",
@@ -88,7 +89,7 @@
         key: "value",
         digit: 17,
         toString: function(){
-            return this.digit;
+            return "this.digit";
         }
     };
     alert(+obj);*/
@@ -102,7 +103,7 @@
     }
 
     var john = new Person("John");
-    console.log(john);*/
+    console.log(obj);*/
 /*2*/
     //new function() { … }
     /*var john = new function () {
@@ -126,7 +127,7 @@
      var john = new Person();
      console.log(john);*/
     //
-   /* function Person () {
+    /*function Person () {
         this.name = "John";
         this.age = 30;
         return 180;
@@ -135,7 +136,7 @@
     var john = new Person();
     console.log(john);*/
 /*4*/
-   /* var john = new Person();
+    /*var john = new Person();
     //
     var john = new Person;*/
 /*5*/
@@ -168,6 +169,7 @@
     console.log(john.age);
     console.log(john.message);*/
 
+    //Object.defineProperty(obj, "key", {value:"asd", writable: false, configurable: false, enumerable: false})
 </script>
 <script>
     //дискрипторы
@@ -178,10 +180,13 @@
     console.log(obj);*/
     //
     /*var obj = {};
-    Object.defineProperty(obj, "key", {value: "val", configurable: true, writable: true, enumerable: true});
+    //Object.defineProperty(obj, "key", {value: "val", configurable: true, writable: true, enumerable: true});
     //
-    Object.defineProperty(obj, "key", {value: "val", configurable: false, writable: false, enumerable: true});
+    Object.defineProperty(obj, "key", {value: "val", configurable: false, writable: false, enumerable: false});
     obj.key = 15;
+    for (i in obj) {
+        console.log(i);
+    }
     console.log(obj);*/
 /*2*/
     /*var obj = {
@@ -193,7 +198,8 @@
             return this.height + this.width;
         }
     });
-    console.log(obj.square);*/
+    console.log(obj.square);
+    console.log(obj);*/
     //
     /*var obj = {
         height: 120,
@@ -208,9 +214,10 @@
     });
     obj.square = 270;
     console.log(obj.height);
-    console.log(obj.width);*/
+    console.log(obj.width);
+    console.log(obj);*/
     //
-/*    var obj = {
+    /*var obj = {
         height: 120,
         width: 150,
         get square(){
@@ -227,6 +234,10 @@
     obj.square = 270;
     console.log(obj.height);
     console.log(obj.width);*/
+
+
+    Object.defineProperty(obj, "width", {enumerable: false});
+    console.log(Object.keys(obj));
 </script>
 </body>
 </html>
