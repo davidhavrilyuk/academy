@@ -3,25 +3,70 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title>16 jsa</title>
+    <script src="main.js"></script>
 </head>
 <body>
 <script>
+    (function () {
+        var str = "hello";
+
+        function out(){
+            alert(str);
+        }
+        out();
+    }());
+
+
+
+    var str = "world";
+    function out(){
+        alert(str);
+    }
+    out();
+
+    /*console.log(window);*/
     /*1*/
-    /*var str = "string";
+   /* var str = "string";
     console.log(window.str);*/
 
-    /*window.str = "string";
+   /* window.str = "string";
     console.log(str);*/
 
     /*2*/
-    /*alert(a);
+   /* alert(a);
     var a = 5;*/
+
 
     /*alert(a);
      a = 5;*/
 
-    /*alert(s);
-    function s (){}*/
+    /*alert(a);
+    while (true) {
+        var a = 5;
+    }*/
+    /*function s (){
+        var a = 5;
+    }*/
+
+
+    /*function alr(name) {
+        //{out: undefined, name: world}
+        var out = "Hello " + name;
+        //{out: Hello world, name: world}
+        alert(out);
+    }
+
+    alr("world");*/
+
+    /*var user = "Name"; //window.user = "name";
+
+    function alr() { // [[scope]] = window {user: name in function, [[scope]] = window}
+        var user = "name in function";
+        alert(user);
+    }
+
+    alr();*/
+
 
     /*3*/
     /*function out(name) {
@@ -33,6 +78,31 @@
 
     str = 'Bye';
     out('World');*/
+
+
+   /* function cnt() { //{1}
+        var count = 1;
+
+        return function () { // {2} [[scope ]] = {1}
+            return count++;
+        }
+    }
+
+    var counter = cnt();
+
+    alert(counter());
+    alert(counter());
+    alert(counter());
+
+    var fn = new Function("a", "b", "alert(a+b)");*/
+
+    /*function fn() {
+        /!**!/
+    }
+    fn.key = "str";
+
+    console.log(fn.key);*/
+
 
     /*4*/
     /*function calc( a, b ) {
@@ -46,13 +116,6 @@
     calc( 5, 10 );*/
 
     /*5*/
-    /*var str = "hello";
-
-    function out(){
-        alert(str);
-    }
-
-    out();*/
 
 </script>
 </body>
