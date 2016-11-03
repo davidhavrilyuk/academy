@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Module 2</title>
+    <script src="jquery.min.js"></script>
+</head>
+<body>
+<!-- 9 -->
+<ul>
+    <li>10</li>
+    <li>20</li>
+    <li>30</li>
+    <li>40</li>
+    <li>50</li>
+</ul>
+<script>
+    function sum() {
+        var result = 0, list = document.querySelectorAll("ul>li");
+        for(var i = 0; i < list.length; i++) {
+            result += parseInt(list[i].innerHTML);
+        }
+        return result;
+    }
+    //console.log(sum());
+</script>
+
+<!-- 10 -->
+<div id="one"><span>this is text</span></div>
+<div id="two"></div>
+<script>
+    var one = document.getElementById("one");
+    one.onclick = function () {
+        var two = document.getElementById("two");
+        two.innerHTML = one.innerHTML;
+        one.innerHTML = "";
+    }
+</script>
+
+<!-- 19 -->
+<script>
+    function myAjax() {
+        $.ajax({
+            url: "path_to_server",
+            method: "POST",
+            dataType: "text",
+            data: "background=blue",
+            success: function (response) {
+                $("#result").text(response.text);
+            },
+            error: function (jqXHR, textStatus) {
+                $("body").append("<div id='error'></div>");
+                $("#error").text(textStatus);
+            }
+        });
+    }
+</script>
+
+<!-- 20 -->
+<nav>
+    <a href="/">item 1</a>
+    <a href="/">item 2</a>
+    <a href="/">item 3</a>
+    <a href="/">item 4</a>
+    <a href="/">item 5</a>
+</nav>
+<div id="status">Enabled</div>
+<button id="btn">Lock</button>
+<script>
+    $("#btn").click(function () {
+        var status = $("#status");
+        if (status.text() == "Enabled") {
+            status.text("Disabled");
+            $("nav a").on("click", function (e) {
+                e.preventDefault();
+                alert($(this).text());
+            });
+        } else {
+            status.text("Enabled");
+            $("nav a").off();
+        }
+    });
+</script>
+</body>
+</html>

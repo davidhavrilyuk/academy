@@ -4,25 +4,133 @@
     <meta charset="UTF-8">
     <title>jQuery 02</title>
     <script src="js/jquery.min.js"></script>
-    <style>
-        #one {
-            width: 200px;
-            height: 200px;
-            background: #dcdcdc;
-            margin: 50px;
-        }
-    </style>
 </head>
 <body>
-<button id="start">start</button>
-<p>text</p>
-<div id="one"></div>
-<form action="">
-    <input type="text" name="first"/>
-    <input type="text" name="second"/>
-    <input type="submit" value="submit"/>
+<form action="" method="get">
+    <input type="text" name="login" value="">
+    <input type="text" name="pass" value="">
+    <input type="checkbox" name="check" value="">
+    <input type="submit" value="submit">
 </form>
+<ul>
+    <li>item1</li>
+    <li>item2</li>
+    <li>item3</li>
+    <li>item4</li>
+    <li class="active">item5</li>
+    <li>item6</li>
+    <li>item7</li>
+    <li>item8</li>
+    <li>item9</li>
+    <li>item10</li>
+</ul>
 <script>
+
+    $("form").on("submit", function( event ) {
+        event.preventDefault();
+
+
+    });
+
+    $("input[type='checkbox']").prop('checked', "checked");
+    $("input[type='checkbox']").removeProp("checked");
+    //console.log($("input[type='checkbox']").prop('checked'));
+    //$("form").replaceAll(".active");
+    //$(".active").replaceWith("<div />");
+
+
+    //$(".active").remove();
+    //$(".active").empty();
+    //var el = $(".active").detach();
+    //console.log(el);
+
+
+
+    //$(".active").after("<div />");
+    //$(".active").before("<div />");
+    //$("form").insertAfter(".active");
+    //$("form").insertBefore(".active");
+
+
+
+
+    /*$("ul li").wrapInner(function (index) {
+        if (index == 9) {
+            return "<span />"
+        } else {
+            return "<p />"
+        }
+    });*/
+
+
+
+    //$("ul li").addClass("first");
+
+    /*$("ul li").addClass(function (index, current) {
+        if(current == "active") {
+            return "none"
+        } else {
+            return "second-" + index
+        }
+
+    });*/
+    //console.log($("ul li").hasClass("active"));
+  //  if ($("ul li").hasClass("active")) {
+//        console.log($("ul li").hasClass("active"));
+    //}
+    //$("ul li").removeClass("active");
+    //$("ul li").toggleClass("a");
+    //console.log($("ul").clone(true, false));
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /*$("form").on("submit", function( event ) {
+        event.preventDefault();
+        console.log($("input[type='text']").val(""));
+       // console.log( $(this).serialize() );
+    });*/
+    //$("input[type='text']").val("dasdasdas");
+   /* $("input[type='text']").blur(function () {
+        console.log("event blur");
+    });
+    $("input[type='text']").change(function () {
+        console.log("event change");
+    });
+
+    $("input[type='text']").focus(function () {
+        console.log("event focus");
+    });
+    $("input").on("focus", function () {
+
+    });*/
+    //var obj = {width: 85, height: 189};
+    //console.log($.param(obj));
+
+
+
+   /* $("#container").data("param", 45);
+    console.log($("#container").data("param"));
+    $("#container").removeData("param");
+    console.log($("#container").data("param"));*/
+
+
+
+
+
+
+
+
+
 
 
     /*$("#start").click(function(){

@@ -3,17 +3,35 @@
     <title>11 HTML5</title>
     <meta charset="utf-8"/>
 </head>
+<style>
+    div {
+        width: 200px;
+        padding: 50px;
+        background: #000;
+        border-radius: 15px 10px 30px 0;
+        box-shadow: 0px 0px 100px 5px #ff0521;
+        text-shadow: 0px 10px 10px #fff;
+        color: #fff;
+        overflow-x: scroll;
+    }
+    .asd {
+        width: 300px;
+    }
+</style>
 <body>
+<div>
+    <p class="asd">fdsagfadsfasd  dsa fdas fads fads sda fads fsad f</p>
+</div>
 
-<script>
+<!--<script>
 
     //cookies
 
-    //alert( document.cookie );
-    //alert( typeof document.cookie );
+    //alert( getCookie("key") );
+    //alert(typeof document.cookie );
 
     // возвращает cookie с именем name, если есть, если нет, то undefined
-    /*function getCookie(name) {
+  /*  function getCookie(name) {
         var matches = document.cookie.match(new RegExp(
                 "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
         ));
@@ -22,8 +40,12 @@
 
     //document.cookie = "user=name";
 
+    //document.cookie = "userName=Vasya";
+    //document.cookie = "key=dasd asd as";
 
-    /*function setCookie(name, value, options) {
+    //setCookie("nameCookie", "VALUE", {expires: 3600, path:"/", domain:"localhost", secure: false});
+
+   /* function setCookie(name, value, options) {
         options = options || {};
 
         var expires = options.expires;
@@ -51,20 +73,27 @@
 
         document.cookie = updatedCookie;
     }*/
-    //localStorage.setItem("key", 5);
+
+
+
+    localStorage.setItem("fds", "dasdasdas");
     //localStorage.clear();
-    //localStorage.setItem("keyrrr", 4);
+    //0localStorage.setItem("keyrrr", 4);
     //localStorage.setItem("key2123", "fseqwd");
     //localStorage.removeItem("key");
-    //alert(localStorage.length);
-    //alert(localStorage.key(1));
-    sessionStorage.sdf = "fdsfsdfs";
 
-    window.addEventListener("storage", handle_storage, false);
+    //alert(localStorage.length);
+    //alert(localStorage.keyrrr);
+
+    //sessionStorage.sdf = "fdsfsdfs";
+
+    window.addEventListener("storage", handle_storage, true);
+
     function handle_storage(e) {
         console.log(e);
+
     }
 
-</script>
+</script>-->
 </body>
 </html>
