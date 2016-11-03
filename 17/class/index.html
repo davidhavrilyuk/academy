@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>jsa</title>
+</head>
+<body>
+<script>
+    /*1*/
+    /*function Person() {
+        Person.age++;
+    }
+
+    Person.age = 20;
+
+    Person();
+    console.log(Person.age);*/
+    /**/
+    /*function Person() {
+        Person.age++;
+
+        Person.show = function(){
+            console.log(this.age);
+        }
+    }
+
+    Person.age = 20;
+    Person();
+    Person.show();*/
+
+    /*2*/
+    /*function Person(params) {
+        if (params) {
+            this.age = params.age;
+        } else {
+            this.age = "Not available";
+        }
+
+        this.show = function(){
+            console.log(this.age);
+        }
+    }
+
+    var John = new Person();
+    John.show();
+
+    var John = new Person({age:25});
+     John.show();*/
+
+    /**/
+    /*function Person() {
+        this.show = function(){
+            console.log(this.age);
+        }
+    }
+
+    Person.nonAge = function(){
+        var person = new Person();
+        person.age = "Not available";
+        return person;
+    };
+
+    Person.withAge = function(params){
+        var person = new Person();
+        person.age = params.age;
+        return person;
+    };
+*/
+    /*var John = new Person.nonAge();
+    John.show();*/
+
+    /*var John = new Person.withAge({age:25});
+    John.show();*/
+
+    /*3*/
+    /*function showAge(){
+        console.log(this.name + this.age);
+    }
+    var person = {
+        name: "John",
+        age: 25
+    };
+
+    showAge(person);
+
+    showAge.call(person);*/
+
+    /*4*/
+    /*var person = {
+        name: "John",
+        age: 25,
+        show: function(param){
+            console.log(this.name + param + this.age);
+        }
+    };
+
+    var obj = {
+        name: "Mellisa",
+        age:20
+    };
+    obj.show = person.show;
+    obj.show(" - ");*/
+    /**/
+
+    /*var person = {
+        name: "John",
+        age: 25,
+        show: function(){
+            console.log(this.name + this.age);
+        }
+     };
+
+     var obj = {
+        name: "Mellisa",
+        age: 20
+     };
+
+    person.show.call(obj);*/
+
+    /*5*/
+    /*setTimeout(function(){
+        console.log("Hello");
+    }, 1000);*/
+
+   /* var person = {
+        fname: "John",
+        show: function() {
+            console.log( this.fname );
+        }
+    };*/
+
+    /*setTimeout(person.show, 1000);*/
+
+    /**/
+    /*setTimeout(function(){
+        person.show();
+    }, 1000);*/
+
+    /**/
+    /*function bind(func, context) {
+        return function() {
+            return func.apply(context, arguments);
+        };
+    }
+
+    var person = {
+        fname: "John",
+        show: function() {
+            console.log( this.fname );
+        }
+    };
+
+    setTimeout(bind(person.show, person), 1000);*/
+
+    /**/
+
+     /*var person = {
+        fname: "John",
+        show: function() {
+            console.log( this.fname );
+        }
+     };
+
+     setTimeout(person.show.bind(person), 1000);*/
+
+
+
+</script>
+</body>
+</html>
