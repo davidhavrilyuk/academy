@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>19</title>
+</head>
+<body>
+<script>
+    /*var person = {
+        name: "John",
+        age: 20
+    };
+
+    var obj = {
+        key: "value-obj"
+    };
+
+    person.__proto__ = obj;
+
+    for (var key in person) {
+        if (person.hasOwnProperty(key)) {
+            console.log(key);
+        } else {
+            console.log("from proto " + key);
+        }
+    }*/
+
+    /*var person = {
+        name: "John",
+        age: 20
+    };*/
+
+    /*var obj = {
+        key: "value-obj"
+    };
+
+    var person = Object.create(obj);
+    person.name = "John";
+
+    console.log(person);*/
+
+    /*var obj = {
+        key: "value-obj"
+    };
+
+    function John(name, age) {
+        this.name = name;
+        this.age = age;
+        this.__proto__ = obj;
+    }
+
+    var john = new John("John", 20);
+
+    console.log(john);*/
+
+    /**/
+    /*var obj = {
+        key: "value-obj"
+    };
+
+    function John(name, age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    //John.prototype = obj;
+
+    var john = new John("John", 20);
+
+    var john2 = new john.constructor("john2", 432);
+
+    console.log(john2);*/
+
+  /*  var obj = {};
+    var obj = new Object();
+    var arr = new Array();
+    var ar = [];
+
+    var as = new Number();
+    var d = 5;
+    //d = d.toFixed;
+
+    console.log(String.prototype);*/
+
+    /*var name = "Steven";
+    console.log(String.prototype);
+
+    String.prototype.countOfChar = function () {
+        return this.length;
+    };
+    console.log(String.prototype);
+    console.log(name.countOfChar());*/
+
+
+    function Component(name, type) {
+        this.type = type;
+        this.name = name;
+        this.status = false;
+    }
+
+    Component.prototype.init = function () {
+        return this.status = true;
+    };
+
+    Component.prototype.changeType = function (type) {
+        return this.type = type;
+    };
+
+
+    function Menu() {
+        Component.apply(this, arguments);
+        this.view = "vertical";
+    }
+
+    Menu.prototype.__proto__ = Component.prototype;
+
+    var menu = new Menu();
+
+    console.log(menu.status);
+
+
+
+
+
+
+
+</script>
+</body>
+</html>
