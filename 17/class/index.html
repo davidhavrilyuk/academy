@@ -5,6 +5,8 @@
     <title>jsa</title>
 </head>
 <body>
+<div style="margin-bottom: 50px">text</div>
+<div style="margin-top: 100px">text2</div>
 <script>
     /*1*/
     /*function Person() {
@@ -12,9 +14,16 @@
     }
 
     Person.age = 20;
+    Person.show = function () {
+        console.log(Person.age);
+    };
+    var obj = new Person();
+    //console.log(obj.age);
+    //console.log(Person.age);
 
-    Person();
-    console.log(Person.age);*/
+    Person.show();*/
+
+
     /**/
     /*function Person() {
         Person.age++;
@@ -33,19 +42,24 @@
         if (params) {
             this.age = params.age;
         } else {
-            this.age = "Not available";
+            //this.age = "Not available";
         }
 
         this.show = function(){
             console.log(this.age);
         }
-    }
+    }*/
 
-    var John = new Person();
-    John.show();
+    /*var John = new Person();
+    John.show(); // var John = {age: "Not available"};
+    console.log(John);
+
 
     var John = new Person({age:25});
-     John.show();*/
+     John.show(); //var John = {age: 25};
+    console.log(John);*/
+
+
 
     /**/
     /*function Person() {
@@ -63,27 +77,31 @@
     Person.withAge = function(params){
         var person = new Person();
         person.age = params.age;
+        person.height = params.height;
         return person;
     };
-*/
-    /*var John = new Person.nonAge();
-    John.show();*/
 
-    /*var John = new Person.withAge({age:25});
-    John.show();*/
+    var John = new Person.nonAge();
+    John.show();
+    console.log(John);
+
+    var John = new Person.withAge({age:25, height: 180});
+    John.show();
+    console.log(John);*/
 
     /*3*/
-    /*function showAge(){
+   /* function showAge(){
         console.log(this.name + this.age);
     }
     var person = {
         name: "John",
         age: 25
-    };
+    };*/
 
-    showAge(person);
 
-    showAge.call(person);*/
+    //showAge();
+
+    //showAge.call(person);
 
     /*4*/
     /*var person = {
@@ -96,8 +114,11 @@
 
     var obj = {
         name: "Mellisa",
-        age:20
+        age: 20
     };
+    // person.show(" aaa ");
+
+
     obj.show = person.show;
     obj.show(" - ");*/
     /**/
@@ -105,8 +126,9 @@
     /*var person = {
         name: "John",
         age: 25,
-        show: function(){
-            console.log(this.name + this.age);
+        show: function(param, a){
+            console.log(a);
+            console.log(this.name + param + this.age);
         }
      };
 
@@ -114,13 +136,18 @@
         name: "Mellisa",
         age: 20
      };
+    person.show(" - ", "param");
+    person.show.call(obj, []);
+    person.show.apply(obj, []);*/
 
-    person.show.call(obj);*/
+
 
     /*5*/
-    /*setTimeout(function(){
+   /* setTimeout(function(){
         console.log("Hello");
     }, 1000);*/
+
+
 
    /* var person = {
         fname: "John",
@@ -136,8 +163,10 @@
         person.show();
     }, 1000);*/
 
+
+
     /**/
-    /*function bind(func, context) {
+   /* function bind(func, context) {
         return function() {
             return func.apply(context, arguments);
         };
@@ -157,11 +186,12 @@
      /*var person = {
         fname: "John",
         show: function() {
+
             console.log( this.fname );
         }
      };
-
-     setTimeout(person.show.bind(person), 1000);*/
+    person.show();
+     setTimeout(person.show, 1000);*/
 
 
 

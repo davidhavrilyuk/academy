@@ -3,11 +3,11 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title>16 jsa</title>
-    <script src="main.js"></script>
+    <!--<script src="main.js"></script>-->
 </head>
 <body>
 <script>
-    (function () {
+    /*(function () {
         var str = "hello";
 
         function out(){
@@ -22,7 +22,7 @@
     function out(){
         alert(str);
     }
-    out();
+    out();*/
 
     /*console.log(window);*/
     /*1*/
@@ -80,7 +80,44 @@
     out('World');*/
 
 
-   /* function cnt() { //{1}
+   /*function cnt() { //{1}
+        var count = 1;
+        alert("alert"+count);
+        return function () { // {2} [[scope ]] = {1}
+            return count++;
+        }
+    }
+
+    var counter = cnt();
+
+    alert(counter());
+    alert(counter());
+    alert(counter());*/
+
+
+/**/
+    function cnt() { //{1}
+        var count = 1;
+        //alert("alert"+count);
+        return {
+            next: function () {
+                return count++;
+            },
+            reset: function () {
+              count = 10;
+            }
+        }
+    }
+
+    var counter = cnt();
+
+    alert(counter.next());
+    alert(counter.next());
+    counter.reset();
+    alert(counter.next());
+
+    /**/
+    function cnt() { //{1}
         var count = 1;
 
         return function () { // {2} [[scope ]] = {1}
@@ -94,7 +131,14 @@
     alert(counter());
     alert(counter());
 
-    var fn = new Function("a", "b", "alert(a+b)");*/
+
+
+
+
+
+
+
+    /*var fn = new Function("a", "b", "alert(a+b)");*/
 
     /*function fn() {
         /!**!/

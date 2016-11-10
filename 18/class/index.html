@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>18</title>
+</head>
+<body>
+<script>
+   /* function Person(name, size) {
+        this.name = name;
+        this.age = 20;
+
+        //this.size = size;
+
+        var sz = "";
+
+        this.setSize = function (size) {
+            if (typeof size == "string") {
+                sz = size;
+            } else {
+                console.log("Error");
+            }
+        };
+
+        this.getSize = function () {
+            return sz;
+        };
+
+
+        this.Size = function () {
+          if(arguments.length != 0) {
+              //set
+              sz = arguments[0];
+          } else {
+              //get
+          }
+        };
+        var message = "This is person - ";
+
+        this.show = function () {
+            console.log(sz + text() + message + this.name + text() + this.age);
+        };
+
+        function text() {
+            return " ";
+        }
+
+
+
+    }
+
+    var John = new Person("John", "small");
+    var obj = {
+        key: "val"
+    };
+
+    John.show();
+    John.setSize(43);
+    John.show();
+    //John.getSize();
+    console.log(John);
+    console.log(obj);*/
+
+/**/
+
+    function Component(size, age) {
+        this._status = false;
+        this._size = size;
+        this._age = age;
+
+        this.show = function () {
+            this._status = true;
+            console.log("this is method from Component");
+        };
+
+        this.hide = function () {
+          this._status = false;
+        }
+    }
+
+    function Menu(size, age) {
+        Component.apply(this, arguments);
+
+        var count = 0;
+
+        this.setElements = function (cnt) {
+            count = cnt;
+        };
+
+        this.build = function () {
+          console.log("method build from class Menu");
+            this._status = false;
+        };
+
+        var origin = this.show;
+        this.showNew = function () {
+            origin.call(this);
+            this._status = "ddas";
+            //this.build();
+
+        }
+
+    }
+
+
+
+
+    var myMenu = new Menu("small", 34);
+    myMenu.setElements(10);
+
+    myMenu.showNew();
+
+    console.log(myMenu);
+
+
+
+</script>
+</body>
+</html>
