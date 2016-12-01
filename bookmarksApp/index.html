@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html ng-app="bookmarksApp">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Angular bookmarks</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="public/css/style.css"/>
+    <script src="public/lib/angular.min.js"></script>
+    <script src="app/app.js"></script>
+    <script src="app/controllers/indexCtrl.js"></script>
+    <script src="app/controllers/addFormCtrl.js"></script>
+    <script src="app/controllers/bookmarksListCtrl.js"></script>
+    <script src="app/models/bookmarksModel.js"></script>
+</head>
+<body ng-controller="indexCtrl">
+<div class="wrap">
+    <div class="page-header">
+        <h1>Angular bookmarks</h1>
+    </div>
+    <div id="addForm" ng-controller="addFormCtrl">
+        <div ng-include="'views/addForm.html'"></div>
+    </div>
+    <div id="bookmarksList" ng-controller="bookmarksListCtrl">
+        <div ng-include="'views/bookmarksList.html'"></div>
+    </div>
+</div>
+</body>
+</html>
