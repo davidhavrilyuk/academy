@@ -12,7 +12,7 @@
     <tr ng-repeat="bookmark in list.bookmarks" ng-class-even="tableRowClass" ng-mouseenter="tableRowHover($event)" ng-mouseleave="tableRowHover($event)" ng-class="tableRowHoverClass">
         <td>{{bookmark.id}}</td>
         <td>{{bookmark.name}}</td>
-        <td>{{bookmark.url}}</td>
+        <td>{{bookmark.url | httpFilter }}</td>
         <td>{{bookmark.description}}</td>
         <td><button class="btn btn-danger" ng-click="deleteBookmark(bookmark.id)">Delete</button></td>
     </tr>

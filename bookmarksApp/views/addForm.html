@@ -1,8 +1,8 @@
-<form class="navbar navbar-form">
+<form class="navbar navbar-form" name="addForm">
     <div class="form-group">
-        <input type="text" class="form-control" placeholder="Name" ng-model="name">
-        <input type="text" class="form-control" placeholder="Url" ng-model="url">
-        <input type="text" class="form-control" placeholder="Description" ng-model="description">
-        <button class="btn btn-primary" ng-click="addBookmark(name, url, description)">Add Bookmark</button>
+        <input type="text" class="form-control" required placeholder="Name" ng-model="newBookmark.name" ng-pattern="/^[A-Z,a-z]/">
+        <input type="text" class="form-control" required placeholder="Url" ng-model="newBookmark.url">
+        <input type="text" class="form-control" required placeholder="Description" ng-model="newBookmark.description">
+        <button class="btn btn-primary" ng-click="addBookmark(newBookmark, addForm)">Add Bookmark</button>
     </div>
 </form>

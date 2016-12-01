@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<html ng-app="bookmarksApp">
-<head lang="en">
+<html ng-app="bookmarksApp" lang="en">
+<head>
     <meta charset="UTF-8">
     <title>Angular bookmarks</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -10,6 +10,8 @@
     <script src="app/controllers/indexCtrl.js"></script>
     <script src="app/controllers/addFormCtrl.js"></script>
     <script src="app/controllers/bookmarksListCtrl.js"></script>
+    <script src="app/filters/httpFilter.js"></script>
+    <script src="app/directives/customList.js"></script>
     <script src="app/models/bookmarksModel.js"></script>
 </head>
 <body ng-controller="indexCtrl">
@@ -23,6 +25,8 @@
     <div id="bookmarksList" ng-controller="bookmarksListCtrl">
         <div ng-include="'views/bookmarksList.html'"></div>
     </div>
+
+    <div custom-list="mylist"></div>
 </div>
 </body>
 </html>
