@@ -6,13 +6,15 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="public/css/style.css"/>
     <script src="public/lib/angular.min.js"></script>
+    <script src="public/lib/angular-sanitize.min.js"></script>
+    <script src="public/lib/angular-route.min.js"></script>
     <script src="app/app.js"></script>
     <script src="app/controllers/indexCtrl.js"></script>
     <script src="app/controllers/addFormCtrl.js"></script>
     <script src="app/controllers/bookmarksListCtrl.js"></script>
     <script src="app/filters/httpFilter.js"></script>
     <script src="app/directives/customList.js"></script>
-    <script src="app/models/bookmarksModel.js"></script>
+    <script src="app/services/dataService.js"></script>
 </head>
 <body ng-controller="indexCtrl">
 <div class="wrap">
@@ -20,13 +22,14 @@
         <h1>Angular bookmarks</h1>
     </div>
     <div id="addForm" ng-controller="addFormCtrl">
-        <div ng-include="'views/addForm.html'"></div>
+        <a href="#/add">Add Bookmark</a>
+        <ng-view></ng-view>
     </div>
     <div id="bookmarksList" ng-controller="bookmarksListCtrl">
         <div ng-include="'views/bookmarksList.html'"></div>
     </div>
 
-    <div custom-list="mylist"></div>
+    <!--<div custom-list="mylist"></div>-->
 </div>
 </body>
 </html>
