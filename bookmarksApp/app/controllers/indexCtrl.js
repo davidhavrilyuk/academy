@@ -1,11 +1,7 @@
 bookmarksApp.controller("indexCtrl", function($scope, $http) {
 
-    $http.get("bookmarks.json").success(function (data, status, headers,config) {
+    $http.get("bookmarks.json").success(function (data) {
         $scope.list = data;
-        console.log(data);
-        console.log(status);
-        console.log(headers);
-        console.log(config);
     });
 
     /*bookmarksApp style*/
