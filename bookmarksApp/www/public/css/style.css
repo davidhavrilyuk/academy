@@ -7,3 +7,6 @@ ng-view {
     width: 100%;
     float: left;
 }
+.alert {
+    margin: 20px 0;
+}
